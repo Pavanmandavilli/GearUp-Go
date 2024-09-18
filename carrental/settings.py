@@ -27,6 +27,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://gearup-go.onrender.com',  # Add your Render URL here
+]
 
 # Application definition
 
