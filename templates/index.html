@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index Page</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
+        integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css"
+        integrity="sha512-wR4oNhLBHf7smjy0K4oqzdWumd+r5/+6QO/vDda76MW5iug4PT7v86FoEkySIJft3XA0Ae6axhIvHrqwm793Nw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="static\css\style.css">
+
+    <link rel="stylesheet" href="static\css\responsive.css">
+    <style>
+        #profiledrop{
+            text-decoration: none;
+        }
+        #profiledrop p{
+            color: black;
+            text-decoration: none;
+            letter-spacing: 0;
+            padding: 1rem;
+            margin: 0;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header id="header">
+
+        <div class="container-fluid ps-0">
+            <div class="row nav-row align-items-center">
+
+                <div class="col-lg-3 col-sm-4 col-5">
+                    <div class="logo text-md-end text-center">
+                        <img src="static\images\logo.png" class="img-fluid" alt="logo" style="height: 6rem;width: 6rem">
+                    </div>
+                </div>
+
+
+
+                <div class="col-md-6 col-5">
+
+                    <div class="nav_icon">
+                        <ul class="nav">
+                            <li class="nav-item">
+                                <a class="nav-link ms-0" href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#"><i class="fa-brands fa-instagram"></i></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#"><i class="fa-brands fa-twitter"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="nav_bar d-flex justify-content-center">
+                        <ul class="nav">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="{% url 'index' %}">HOME</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'aboutus' %}">ABOUT US</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'rentalservices' %}">RENTAL SERVICES</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-2">
+
+                    <div id="main">
+                        <span onclick="openNav()"><i class="burger fa-solid fa-bars text-white"></i></span>
+                    </div>
+                    <div id="mySidenav" class="sidenav">
+                        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                        <a class="active" href="{% url 'index' %}">HOME</a>
+                        <a href="{% url 'aboutus' %}">ABOUT US</a>
+                        <a href="{% url 'rentalservices' %}">RENTAL SERVICES</a>
+                        <a href="{% url 'contact' %}"><button type="button" class="btn">CONTACT US</button></a>
+                    </div>
+
+                    <div class="button-wrapper">
+                        <a href="{% url 'contact' %}"><button type="button" class="btn">CONTACT US</button></a>
+                        <div class="btn2"></div>
+                    </div>
+
+                    <div style="position: absolute;right: 80px;top:40px">
+                         <button style="background:black"
+                        class="relative cursor-pointer"
+                        onclick="profile();">
+                        <svg class="absolute right-1 top-0" width="32" height="34" viewBox="0 0 32 34" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="15" cy="19" r="15" fill="#B0B0B0" />
+                            <circle cx="26" cy="6" r="5.5" fill="#11A0DA" stroke="white" />
+                            <mask id="mask0_1055_20297" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="2" y="6"
+                                width="26" height="26">
+                                <circle cx="15" cy="19" r="12.1875" fill="#737373" />
+                            </mask>
+                            <g mask="url(#mask0_1055_20297)">
+                                <circle cx="15" cy="17.125" r="6.5625" fill="white" />
+                                <circle cx="15" cy="33.0625" r="11.25" fill="white" />
+                            </g>
+                        </svg>
+                    </button>
+                    <div id="profiledrop"
+                        class="hidden absolute top-10 right-0 w-[300px] pt-2 pb-2 bg-white shadow border rounded-2xl border-gray-300 z-50">
+                     {% if request.session.username is None %}
+                        <!-- Your code here -->
+                        <a href="{% url 'login' %}"><p>Login</p></a>
+                        <a href="{% url 'register' %}"><p>Register</p></a>
+                        {% else %}
+                          <p>{{ request.session.username }}</p>
+                        <a href="{% url 'myaccount' %}"><p>MyDetails</p></a>
+                        <a href="{% url 'bookingdetails' %}"><p>MyBookings</p></a>
+                         <a href="{% url 'logout' %}"><p>Logout</p></a>
+                        {% endif %}
+    
+                    </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="row">
+
+                <div class="col-lg-1">
+
+                        <div class="line"></div>
+
+
+
+                </div>
+
+                <div class="col-lg-11 col-12">
+                    <div class="row">
+                        <div class="col-lg-11 col-12">
+                            <div class="overflow-hidden">
+                                <div class="text-center">
+
+                                    <h1 class="ml15">
+                                        <span class="word"> A</span>
+                                        <span class="word"> D</span>
+                                        <span class="word"> V</span>
+                                        <span class="word"> E</span>
+                                        <span class="word"> N</span>
+                                        <span class="word"> T</span>
+                                        <span class="word"> U</span>
+                                        <span class="word"> R</span>
+                                        <span class="word"> E</span>
+                                    </h1>
+                                </div>
+
+                                <div class="ml25 text-center">
+                                    <p class="word">HELPING OTHERS DISCOVER THEIR NEXT ADVENTURE</p>
+                                </div>
+
+                                <div class="fade text-center">
+                                    <img src="static\images\png2.png" class="img-fluid" alt="png2">
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- SECTION 1 -->
+
+    <section id="section1">
+
+        <div class="container-fluid ps-0">
+
+            <div class="row wow animate__animated animate__fadeInUp">
+
+                <div class="col-xxl-12 col-12 pe-0">
+                    <div>
+                        <img src="static\images\png4.png" class="img-fluid" alt="">
+                    </div>
+                </div>
+            </div>
+            </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECTION 2 -->
+
+    <section id="section2">
+
+        <div class="container-fluid">
+            <div class="row about_header wow animate__animated animate__fadeInUp">
+                <div class="col-12">
+                    <div class="section_title">
+                        <h2 class="mb-0">COLLECTIONS</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid">
+            <div class="row align-items-center position-relative">
+
+                <div class="img-wrapper position-absolute">
+                    <img src="static\images\png9.png" class="img-fluid">
+
+                </div>
+                <div class="col-12 wow animate__animated animate__fadeInUp">
+
+                    <div class="reviews-slider slider-nav">
+                        <div class="sin-testiImage">
+                            <img src="static\images\png7.png" alt="">
+                        </div>
+                        <div class="sin-testiImage">
+                            <img src="static\images\png8.png">
+                        </div>
+                        <div class="sin-testiImage">
+                            <img src="static\images\png7.png">
+                        </div>
+
+                        <div class="sin-testiImage">
+                            <img src="static\images\png6.png">
+                        </div>
+                        <div class="sin-testiImage">
+                            <img src="static\images\img7.png">
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-md-8 col-lg-6">
+                            <div class="words-slider position-relative d-flex justify-content-center">
+                                <div class="name-slide">
+                                    <p>COBRA ATV UNCRATE</p>
+                                </div>
+                                <div class="name-slide">
+                                    <p>DIRTBIKE</p>
+                                </div>
+                                <div class="name-slide">
+                                    <p>COBRA ATV UNCRATE</p>
+                                </div>
+                                <div class="name-slide">
+                                    <p>SNOWMOBILE</p>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- SECTION 3 -->
+
+    <!-- SECTION 4 -->
+
+    <!-- SECTION 5 -->
+
+    <!-- FOOTER -->
+
+    <footer id="footer">
+
+        <div class="container-fluid">
+
+            <div class="row align-items-center">
+
+                <div class="col-12 col-lg-11 col-xl-10">
+                    <div class="row navFoot align-items-center">
+
+                         <div class="row-lg-2 px-10">
+                    <div class="nav_icon">
+
+                        <ul class="nav flex-lg-row justify-content-center align-items-center">
+                            <li class="nav-item">
+                                <a class="nav-link linkedin" href="https://www.linkedin.com/in/pavan-sekhar-mandavilli/"><i class="fa-brands fa-linkedin-in"></i></a>
+                            </li>
+                            <br>
+                            <li class="nav-item">
+                                <a class="nav-link instagram" href="https://www.instagram.com/chocolate_boy__485/"><i class="fa-brands fa-instagram"></i></a>
+
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link twitter" href="https://twitter.com/?lang=en"><i class="fa-brands fa-twitter"></i></a>
+
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link facebook ms-0" href="https://www.facebook.com/"><i class="fa-brands fa-facebook-f"></i></a>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js "
+        integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
+        crossorigin=" anonymous " referrerpolicy="no-referrer "></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js "
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz "
+        crossorigin="anonymous "></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.0/slick.min.js"
+        integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+
+    <script src="static\js\wow.min.js "></script>
+
+     <script>
+        function profile() {
+            document.getElementById("profiledrop").classList.toggle("hidden")
+        }
+    </script>
+    <script src="static\js\java.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us Page</title>
+    <!-- ICONSCOUT CDN -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
+        integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css"
+        integrity="sha512-wR4oNhLBHf7smjy0K4oqzdWumd+r5/+6QO/vDda76MW5iug4PT7v86FoEkySIJft3XA0Ae6axhIvHrqwm793Nw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto&display=swap" rel="stylesheet">
+  
+    <link rel="stylesheet" href="static\css\style.css">
+
+    <link rel="stylesheet" href="static\css\responsive.css">
+
+    <link rel="stylesheet" href="static\css\styleNav.css">
+
+    <link rel="stylesheet" href="static\css\responsiveNav.css">
+    <style>
+        .bikes_container{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 2rem;
+}
+
+.container{
+    margin-top: 4rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.bike{
+    background: transparent;
+    border: 1px solid #6578e389;
+    text-align: center;
+    border-radius: 1rem;
+}
+
+.bike__Image img{
+    margin-top: 2rem;
+    border-radius: 1rem;
+    max-width: 405px;
+    max-height: 202px;
+    object-fit: contain;
+}
+
+.bike__info p{
+    color: #ccc;
+    font-size: 0.9rem;
+    font-weight: 450;
+    margin-top: 1rem;
+}
+
+.bike__info h4{
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 550;
+}
+
+.bike__price{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 0.7rem;
+}
+
+.bike__price h3{
+    font-size: 1.5rem;
+    color: #ccc;
+}
+
+.bike__price p{
+    font-size: 1rem;
+    color: #ccc;
+}
+
+.bike__price i{
+    font-size: 1.7rem;
+    color: aqua;
+}
+
+.bike-button{
+    margin-top: 1rem;
+    padding: 1rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    background: rgb(110, 35, 35);
+    color: #ccc;
+    width: 150px;
+    height: 60px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: 1rem;
+    margin-bottom: 2rem;
+    transition: all 400ms ease;
+}
+
+button:hover{
+    background: transparent;
+    border-color: #ccc;
+    color: #fff;
+}
+
+::-webkit-scrollbar{
+    display: none;
+}
+
+@media screen and (max-width:1024px) {
+    .container{
+        width: 100%;
+        grid-template-columns: 1fr;
+        padding: 20px;
+    }
+    button{
+        width: 100%;
+    }
+}
+
+/* Add your existing styles here */
+
+/* Responsive styles for max-width 600px */
+@media screen and (max-width: 600px) {
+    .container {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .bike {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .bike__Image {
+        text-align: center;
+    }
+
+    .bike__Image img {
+        width: 100%;
+        height: auto;
+    }
+
+    .bike_info, .bike_price {
+        text-align: center;
+    }
+
+    button {
+        width: 100%;
+    }
+}
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header id="header">
+
+        <div class="container-fluid ps-0">
+            <div class="row nav-row align-items-center">
+
+                <div class="col-lg-3 col-sm-4 col-5">
+                    <div class="logo text-md-end text-center">
+                        <img src="static\images\logo.png" class="img-fluid" alt="logo" style="height: 6rem; width: 6rem">
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-5">
+                    <div class="nav_bar d-flex justify-content-center">
+                        <ul class="nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'index' %}">HOME</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'aboutus' %}">ABOUT US</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="active nav-link" href="{% url 'rentalservices' %}">RENTAL SERVICES</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-2">
+
+                    <div id="main">
+                        <span onclick="openNav()"><i class="burger fa-solid fa-bars text-white"></i></span>
+                    </div>
+                    <div id="mySidenav" class="sidenav">
+                        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                        <a href="{% url 'index' %}">HOME</a>
+                        <a href="{% url 'aboutus' %}">ABOUT US</a>
+                        <a href="{% url 'rentalservices' %}">RENTAL SERVICES</a>
+                        <a href="{% url 'contact' %}"><button type="button" class="btn">CONTACT US</button></a>
+                    </div>
+
+                    <div class="button-wrapper">
+                        <a href="{% url 'contact' %}"><button type="button" class="btn">CONTACT US</button></a>
+                        <div class="btn2"></div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+
+                <div class="col-lg-1">
+                </div>
+
+                <div class="col-lg-11 col-12">
+                    <div class="row">
+                        <div class="col-lg-11 col-12 pe-0">
+                            <div class="overflow-hidden">
+                                <div class="justify-content-center align-items-center d-flex gap-5">
+
+                                    <h1 class="ml15">
+                                        <span class="word text-center">RENTAL SERVICES</span>
+
+                                    </h1>
+
+                                </div>
+
+                                <div class="text-center">
+                                    <img src="static\images\png2.png" class="img-fluid" alt="png2">
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- PART 5-->
+
+    <section id="part5">
+         <div class="container bikes-container">
+        {% for rs in rss %}
+
+        <article class="bike">
+            <div class="bike__Image">
+                <img src={{rs.img.url}}>
+            </div>
+            <div class="bike__info">
+                <h4>{{rs.name}}</h4>
+                <p>{{rs.desc}}</p>
+            </div>
+            <div class="bike__price">
+                <h3>PER DAY</h3>
+                <i class="uil uil-angle-double-right"></i>
+                <h3>&#8377; {{rs.price}}</h3>
+            </div>
+            <a href="book/{{ rs.id }} "><button class="bike-button">Book Now</button> </a>
+        </article>
+        <!--<article class="bike">
+            <div class="bike__Image">
+                <img src="static\images\img4.png">
+            </div>
+            <div class="bike__info">
+                <h4>ATV BIKE</h4>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+            </div>
+            <div class="bike__price">
+                <h3>PER DAY</h3>
+                <i class="uil uil-angle-double-right"></i>
+                <h3>&#8377; 1000</h3>
+            </div>
+            <button>Book Now</button>
+        </article>
+        <article class="bike">
+            <div class="bike__Image">
+                <img src="static\images\img4.png">
+            </div>
+            <div class="bike__info">
+                <h4>ATV BIKE</h4>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+            </div>
+            <div class="bike__price">
+                <h3>PER DAY</h3>
+                <i class="uil uil-angle-double-right"></i>
+                <h3>&#8377; 1000</h3>
+            </div>
+            <button>Book Now</button>
+        </article>-->
+            {% endfor %}
+    </div>
+
+       <!-- <div class="container-fluid">
+
+            <div class="row gap-lg-0 justify-content-center gap-5">
+
+                <div class="col-sm-4 first-box">
+                    {% for rs in rss %}
+                    <div class="text-center">
+
+                        <div><a href="Rental Services Detail.html"><img src={{rs.img}} class="img-fluid"></a>
+                        </div>
+
+                        <div class="service">
+                            <h2>{{rs.name}}</h2>
+                            <P>{{rs.desc}}</P>
+                            <div class="per-day d-flex align-items-center justify-content-around">
+                                <div>
+
+                                    <h6><span>PER DAY</span></h6>
+                                </div>
+                                <div class="dollar">
+
+                                    <h6>{{rs.price}}</h6>
+                                </div>
+                            </div>
+                            <div class="rent_now">
+                                <p class="mb-0 fw-bold">
+                                    RENT NOW
+                                </p>
+                                <div class="rent-wrap">
+                                    <img src="static\images\png11.png" alt="">
+                                </div>
+
+                            </div>
+                            {% endfor %}
+                        </div>
+
+                    </div>
+
+                </div>
+
+               <div class="col-sm-4 first-row">
+
+                    <div class="text-center">
+
+                        <div><img src="static\images\img5.png" class="img-fluid"></div>
+
+                        <div class="service">
+                            <h2>COOL KTM DIRT BIKES</h2>
+                            <P>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor i</P>
+                            <div class="per-day d-flex align-items-center justify-content-around">
+                                <div>
+
+                                    <h6><span>PER DAY</span></h6>
+                                </div>
+                                <div class="dollar">
+
+                                    <h6>$18.00</h6>
+                                </div>
+                            </div>
+                            <div class="rent_now">
+                                <p class="mb-0 fw-bold">
+                                    RENT NOW
+                                </p>
+                                <div class="rent-wrap">
+                                    <img src=static\images\png11.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-sm-4 first-row">
+                    <div class="text-center">
+
+                        <div><img src="static\images\img6.png" class="img-fluid"></div>
+
+                        <div class="service">
+                            <h2>RANGER SNOWMOBILE</h2>
+                            <P>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor i</P>
+                            <div class="per-day d-flex align-items-center justify-content-around">
+                                <div>
+
+                                    <h6><span>PER DAY</span></h6>
+                                </div>
+                                <div class="dollar">
+
+                                    <h6>$18.00</h6>
+                                </div>
+                            </div>
+                            <div class="rent_now">
+                                <p class="mb-0 fw-bold">
+                                    RENT NOW
+                                </p>
+                                <div class="rent-wrap">
+                                    <img src="static\images\png11.png">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+
+                <div class="col-sm-4">
+
+                    <div class="text-center">
+
+                        <div><img src="static\images\img7.png" class="img-fluid"></div>
+
+                        <div class="service">
+                            <h2>COBRA ATV UNCRATE</h2>
+                            <P>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor i</P>
+                            <div class="per-day d-flex align-items-center justify-content-around">
+                                <div>
+
+                                    <h6><span>PER DAY</span></h6>
+                                </div>
+                                <div class="dollar">
+
+                                    <h6>$18.00</h6>
+                                </div>
+                            </div>
+                            <div class="rent_now">
+                                <p class="mb-0 fw-bold">
+                                    RENT NOW
+                                </p>
+                                <div class="rent-wrap">
+                                    <img src="static\images\png11.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-sm-4">
+
+                    <div class="text-center">
+
+                        <div><img src="static\images\img8.png" class="img-fluid"></div>
+
+                        <div class="service">
+                            <h2>MINI DIRT BIKE</h2>
+                            <P>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor i</P>
+                            <div class="per-day d-flex align-items-center justify-content-around">
+                                <div>
+
+                                    <h6><span>PER DAY</span></h6>
+                                </div>
+                                <div class="dollar">
+
+                                    <h6>$18.00</h6>
+                                </div>
+                            </div>
+                            <div class="rent_now">
+                                <p class="mb-0 fw-bold">
+                                    RENT NOW
+                                </p>
+                                <div class="rent-wrap">
+                                    <img src="static\images\png11.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-sm-4">
+                    <div class="text-center">
+
+                        <div><img src="static\images\img9.png" class="img-fluid"></div>
+
+                        <div class="service">
+                            <h2>RANGER SNOWMOBILE</h2>
+                            <P>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor i</P>
+                            <div class="per-day d-flex align-items-center justify-content-around">
+                                <div>
+
+                                    <h6><span>PER DAY</span></h6>
+                                </div>
+                                <div class="dollar">
+
+                                    <h6>$18.00</h6>
+                                </div>
+                            </div>
+                            <div class="rent_now">
+                                <p class="mb-0 fw-bold">
+                                    RENT NOW
+                                </p>
+                                <div class="rent-wrap">
+                                    <img src="static\images\png11.png">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            <div class="row">
+                <div class="col-12">
+                    <nav aria-label="...">
+                        <ul class="pagination justify-content-center">
+                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item active"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+
+
+
+        </div>-->
+
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js "
+        integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
+        crossorigin=" anonymous " referrerpolicy="no-referrer "></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js "
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz "
+        crossorigin="anonymous "></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.0/slick.min.js"
+        integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+
+    <script src="static\js\wow.min.js "></script>
+
+    <script src="static\js\java.js"></script>
+</body>
+
+</html>

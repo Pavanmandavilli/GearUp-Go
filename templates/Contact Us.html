@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us Page</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
+        integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css"
+        integrity="sha512-wR4oNhLBHf7smjy0K4oqzdWumd+r5/+6QO/vDda76MW5iug4PT7v86FoEkySIJft3XA0Ae6axhIvHrqwm793Nw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="static\css\style.css">
+
+    <link rel="stylesheet" href="static\css\responsive.css">
+
+    <link rel="stylesheet" href="static\css\styleNav.css">
+
+    <link rel="stylesheet" href="static\css\responsiveNav.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header id="header">
+
+        <div class="container-fluid ps-0">
+            <div class="row nav-row align-items-center">
+
+                <div class="col-lg-3 col-sm-4 col-5">
+                    <div class="logo text-md-end text-center">
+                        <img src="static\images\logo.png" class="img-fluid" alt="logo" style="height: 6rem;width: 6rem">
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-5">
+
+                    <div class="nav_bar d-flex justify-content-center">
+                        <ul class="nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="{%  url 'index' %}">HOME</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{%  url 'aboutus' %}">ABOUT US</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{%  url 'rentalservices' %}">RENTAL SERVICES</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-2">
+
+                    <div id="main">
+                        <span onclick="openNav()"><i class="burger fa-solid fa-bars text-white"></i></span>
+                    </div>
+                    <div id="mySidenav" class="sidenav">
+                        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                        <a href="{%  url 'index' %}">HOME</a>
+                        <a href="{%  url 'aboutus' %}">ABOUT US</a>
+                        <a href="{%  url 'rentalservices' %}">RENTAL SERVICES</a>
+                        <a href="{%  url 'contact' %}"><button type="button" class="btn">CONTACT US</button></a>
+                    </div>
+
+                    <div class="button-wrapper">
+                        <a href="{%  url 'contact' %}"><button type="button" class="btn">CONTACT US</button></a>
+                        <div class="btn2"></div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+
+                
+
+                <div class="col-lg-11 col-12">
+                    <div class="row">
+                        <div class="col-lg-11 col-12 pe-0">
+                            <div class="overflow-hidden">
+                                <div class="justify-content-center align-items-center d-flex gap-5">
+
+                                    <h1 class="ml15">
+                                        <span class="word text-center">CONTACT US</span>
+
+                                    </h1>
+
+                                </div>
+
+                                <div class="text-center">
+                                    <img src="static\images\png2.png" class="img-fluid" alt="png2">
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- PART 2 -->
+
+    <section id="part2">
+
+        <div class="container">
+            <div class="row justify-content-between flex-column-reverse flex-lg-row">
+                <div class="col-lg-8">
+                    <div>
+                        <div>
+                            <h5>GET IN TOUCH</h5>
+                        </div>
+                        <div class="form">
+                            <form action="https://formspree.io/f/mjkbqbkz" method="post">
+
+                                <div class="d-md-flex justify-content-between gap-xl-5 gap-3 mb-4">
+                                    <div class="col name d-flex align-items-center justify-content-center mb-md-0 mb-4">
+                                        <i class="fa-solid fa-user"></i>
+                                        <img src="static\images\png5.png" alt="">
+                                        <input type="text" class="form-control" placeholder="Your First Name">
+                                    </div>
+                                    <div class="col name d-flex align-items-center justify-content-center">
+                                        <i class="fa-solid fa-user"></i>
+                                        <img src="static\images\png5.png" alt="">
+                                        <input type="text" class="form-control" placeholder="Your Last Name">
+                                    </div>
+                                </div>
+
+                                <div class="Email d-flex align-items-center justify-content-center mb-4">
+                                    <i class="fa-solid fa-phone"></i>
+                                    <img src="static\images\png5.png" alt="">
+                                    <input type="email" class="form-control" id="email" placeholder="Your Email Address"
+                                        name="email">
+                                </div>
+
+                                <div class="d-flex justify-content-center text-area mb-4">
+                                    <i class="fa-solid fa-envelope"></i>
+                                    <img src="static\images\png5.png" alt="">
+                                    <textarea class="form-control" rows="6" id="comment" placeholder="Message"
+                                        name="text"></textarea>
+                                </div>
+                                <div class="text-center text-sm-start">
+                                    <button type="submit" class="btn">SUBMIT NOW</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js "
+        integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
+        crossorigin=" anonymous " referrerpolicy="no-referrer "></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js "
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz "
+        crossorigin="anonymous "></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.0/slick.min.js"
+        integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+
+    <script src="static\js\wow.min.js "></script>
+
+    <script src="static\js\java.js"></script>
+</body>
+
+</html>
