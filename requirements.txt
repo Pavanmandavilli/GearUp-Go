@@ -1,5 +1,4 @@
 asgiref==3.8.1
-backports.zoneinfo==0.2.1
 Django==4.2.13
 django-allauth==0.62.1
 pillow==10.3.0
